@@ -96,3 +96,8 @@ body {
 .error {
   color: red;
 }
+
+.footer-details {
+    text-align: center;
+    font-size: x-small;
+}
