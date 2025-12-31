@@ -1,51 +1,72 @@
+/* ================== GLOBAL RESET ================== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f5f7fa;
 }
 
+/* ================== APP CONTAINER ================== */
 .app {
   min-height: 100vh;
-  padding: 30px;
+  padding: clamp(12px, 3vw, 32px);
   background: linear-gradient(135deg, #c3ecff, #f5f7fa);
+
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 3vw, 32px);
 }
 
-/* SEARCH */
+/* center content without locking width */
+.app > * {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+/* ================== SEARCH ================== */
 .search {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
   justify-content: center;
 }
 
 .search input {
-  padding: 10px;
-  width: 250px;
-  border-radius: 8px;
+  flex: 1 1 220px;
+  max-width: 320px;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
 }
 
 .search button {
-  padding: 10px 20px;
-  border-radius: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
   border: none;
   background: #6a9cff;
   color: white;
   cursor: pointer;
 }
 
-/* DASHBOARD */
+/* ================== DASHBOARD ================== */
 .dashboard {
-  display: flex;
-  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(16px, 3vw, 32px);
+
   background: white;
-  border-radius: 16px;
-  padding: 30px;
+  border-radius: 18px;
+  padding: clamp(16px, 3vw, 32px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
 }
 
+/* ================== LEFT PANEL ================== */
 .left h1 {
-  font-size: 60px;
+  font-size: clamp(40px, 6vw, 72px);
   margin: 10px 0;
 }
 
@@ -58,46 +79,69 @@ body {
   margin: 6px 0;
 }
 
-/* HOURLY */
-.hourly {
+/* ================== HOURLY FORECAST ================== */
+/* .hourly {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   overflow-x: auto;
+  padding-bottom: 6px;
+} */
+
+.hourly {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 12px;
+  width: 100%;
 }
 
-.hour-card {
+
+/* .hour-card {
+  flex: 0 0 auto;
   min-width: 90px;
   background: #eef3ff;
   padding: 10px;
   border-radius: 12px;
   text-align: center;
+} */
+
+.hour-card {
+  background: #eef3ff;
+  padding: 10px 6px;
+  border-radius: 12px;
+  text-align: center;
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
-/* MAP SECTION */
+
+/* ================== MAP SECTION ================== */
 .map-section {
-  display: flex;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(16px, 3vw, 24px);
 }
 
 .map-card {
-  flex: 1;
   background: white;
-  border-radius: 16px;
-  padding: 15px;
+  border-radius: 18px;
+  padding: 14px;
   text-align: center;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .map-card img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 14px;
 }
 
+/* ================== FOOTER ================== */
+.footer-details {
+  text-align: center;
+  font-size: clamp(10px, 1.2vw, 12px);
+  opacity: 0.7;
+}
+
+/* ================== ERROR ================== */
 .error {
   color: red;
-}
-
-.footer-details {
-    text-align: center;
-    font-size: x-small;
+  text-align: center;
 }
