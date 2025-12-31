@@ -142,6 +142,11 @@ function App() {
           </div>
         </>
       )}
+      <div>
+        <footer className="footer-details">
+          <p>© 2026 Habibullah Sirat</p>
+        </footer>
+      </div>
     </div>
   );
 }
