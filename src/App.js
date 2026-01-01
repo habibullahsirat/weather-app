@@ -144,7 +144,7 @@ function App() {
       )}
       <div>
         <footer className="footer-details">
-          <p>©  Habibullah Sirat</p>
+          <p>© {new Date().getFullYear();} Habibullah Sirat</p>
         </footer>
       </div>
     </div>
